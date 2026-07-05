@@ -1,0 +1,111 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Skool
+providerId: skool
+created: '2026-07-05'
+modified: '2026-07-05'
+reconciled: false
+tags:
+- Community
+- Courses
+- Membership
+- Plans
+description: >-
+  Skool uses simple, flat monthly pricing with two tiers - Hobby at $9/month and
+  Pro at $99/month - each with a 14-day free trial and roughly two months free
+  when billed annually. Both tiers include unlimited members, courses, videos,
+  and live calls plus a custom URL. The primary differences are the payment
+  transaction fee (10% on Hobby vs 2.9% on Pro) and Pro-only capabilities such as
+  multiple admins (up to 30), advanced plugins, and - relevant to this catalog
+  entry - the Zapier integration. Skool's only official programmatic surface (the
+  Zapier plugin and its per-group API key) is therefore a Pro-plan feature; there
+  is no separate API pricing because there is no standalone public API product.
+notes: >-
+  Prices verified on the Skool pricing page as of the review date. There is no
+  API-specific or usage-based pricing to reconcile - Skool does not sell API
+  access as a product. Transaction fees apply to payments processed through
+  Skool for paid communities. Verify current rates on the pricing page.
+sources:
+- https://www.skool.com/pricing
+- https://help.skool.com/article/56-zapier-integration
+plans:
+- id: skool-hobby
+  name: Hobby
+  type: paid
+  description: >-
+    Entry tier at $9/month. Unlimited members, courses, videos, and live calls,
+    plus a custom URL and affiliate access. Carries a 10% transaction fee on paid
+    community payments. Does NOT include the Zapier integration - so no official
+    programmatic surface is available on this tier.
+  entries:
+  - label: Monthly Subscription
+    name: hobby_monthly
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: '9.00'
+    currency: USD
+    userMultiplied: false
+  - label: Payment Transaction Fee
+    name: hobby_transaction_fee
+    type: usage
+    metric: transaction
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 10% of transaction value
+    userMultiplied: false
+  elements:
+  - name: Unlimited Members
+  - name: Unlimited Courses
+  - name: Unlimited Videos
+  - name: Live Calls
+  - name: Custom URL
+  - name: 14-Day Free Trial
+- id: skool-pro
+  name: Pro
+  type: paid
+  description: >-
+    Full tier at $99/month with a reduced 2.9% transaction fee. Adds multiple
+    admins (up to 30), advanced plugins, detailed analytics, boosted discovery in
+    the Skool network, and the Zapier integration - the only official
+    programmatic capability Skool offers. The per-group Zapier API key (link-only,
+    not a general REST API) is available exclusively on this tier.
+  entries:
+  - label: Monthly Subscription
+    name: pro_monthly
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: '99.00'
+    currency: USD
+    userMultiplied: false
+  - label: Payment Transaction Fee
+    name: pro_transaction_fee
+    type: usage
+    metric: transaction
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 2.9% of transaction value
+    userMultiplied: false
+  elements:
+  - name: Everything in Hobby
+  - name: Zapier Integration (Official Programmatic Surface)
+  - name: Multiple Admins (up to 30)
+  - name: Advanced Plugins
+  - name: Detailed Analytics
+  - name: Boosted Network Discovery
+  - name: 14-Day Free Trial
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,66 @@
+aid: skool
+url: https://raw.githubusercontent.com/api-evangelist/skool/refs/heads/main/apis.yml
+name: Skool
+kind: company
+description: >-
+  Skool is an all-in-one community platform that combines discussion communities,
+  online courses, live calls, and gamification in a single product, founded by
+  Sam Ovens and popularized in partnership with Alex Hormozi. As of this review,
+  Skool does NOT publish an official public or partner developer REST API. The
+  only official programmatic surface is a Zapier integration, gated to the paid
+  Pro plan, that exposes a small set of triggers and actions via a per-group API
+  key used solely to link a Skool group to Zapier - it is not a general-purpose
+  developer API. All broader "Skool API" offerings found in the wild (Apify
+  actors, docs.skoolapi.com, reverse-engineered clients, Chrome extensions) are
+  unofficial third-party tools built on Skool's undocumented internal endpoints
+  and are not endorsed or supported by Skool. This catalog entry is an honest
+  gated stub: no public API surface is modeled because none is documented.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Community
+- Courses
+- Online Learning
+- Membership
+- Creator Economy
+- No Public API
+created: '2026-07-05'
+modified: '2026-07-05'
+specificationVersion: '0.19'
+apis:
+- aid: skool:skool-zapier-integration
+  name: Skool Zapier Integration
+  tags:
+  - Zapier
+  - Automation
+  - Integration
+  - Pro Plan
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://help.skool.com/article/56-zapier-integration
+  properties:
+  - url: https://help.skool.com/article/56-zapier-integration
+    type: Documentation
+  - url: https://zapier.com/apps/skool/integrations
+    type: Integrations
+  description: >-
+    Skool's only official programmatic surface. This is a Zapier-mediated
+    automation integration, not a public REST API. It is available on the paid
+    Pro plan only (not Hobby) and is enabled via a per-group API key found under
+    the group's Plugins settings; refreshing that key breaks all existing Zaps.
+    The integration exposes a small, fixed set of capabilities - triggers to send
+    paid members' names and emails, and membership-question answers, to another
+    app (e.g. a CRM), and actions to invite a member to a group and to unlock a
+    course for a member. No base URL, endpoint reference, OpenAPI, or general
+    CRUD surface is published by Skool; there are no modeled endpoints because
+    none are documented (endpointsModeled: false).
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/skool
+- type: Website
+  url: https://www.skool.com
+- type: Documentation
+  url: https://help.skool.com
+- type: Plans
+  url: plans/skool-plans-pricing.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

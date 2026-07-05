@@ -1,0 +1,91 @@
+aid: skool
+name: Skool
+review:
+  question: Does Skool expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-05'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Skool publishes no documented public API
+    of any transport - REST, WebSocket, or SSE. There is no server-push surface,
+    and indeed no general request/response developer API, to model. The only
+    official programmatic surface is a Zapier integration whose triggers and
+    actions are brokered inside Zapier's platform, not exposed as a Skool
+    endpoint.
+findings:
+  summary: |
+    Skool does not publish a documented public WebSocket API. More broadly,
+    Skool does not publish an official public or partner developer REST API at
+    all. This is a deliberate, long-standing product choice by Skool, which
+    favors simplicity over an extensible integration surface. The single
+    official programmatic capability is a Zapier integration, available on the
+    paid Pro plan only (not the Hobby plan), enabled with a per-group API key
+    obtained from the group's Plugins settings. That key exists solely to link a
+    Skool group to Zapier; refreshing it breaks all existing Zaps. The
+    integration offers a small fixed set of triggers (send paid members' names
+    and emails to another app; send membership-question answers) and actions
+    (invite a member to a group; unlock a course for a member). No base URL,
+    endpoint reference, OpenAPI description, or WebSocket (ws:// or wss://)
+    endpoint is documented anywhere on Skool's own properties.
+  publicApiStatus: |
+    NO official public REST API. NO official webhook product beyond the
+    Zapier-mediated triggers. NO app marketplace. NO published base URL or
+    endpoint reference. The Zapier integration is the only sanctioned
+    programmatic path and is Pro-plan-only.
+  endpointsModeled: false
+  thirdPartyNote: |
+    A number of unofficial "Skool API" products exist - Apify actors
+    (e.g. skool-all-in-one-api and various scrapers), docs.skoolapi.com,
+    reverse-engineered clients, and Chrome extensions - that read and write
+    Skool posts, comments, members, and courses by calling Skool's undocumented
+    internal endpoints. None of these are provided, endorsed, or supported by
+    Skool, and they can break without notice. They are noted here for accuracy
+    only and are NOT represented as an official Skool API in this catalog.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No public REST API is documented on Skool's own properties.
+    - protocol: Zapier
+      scheme: https
+      documented: true
+      note: Official Zapier integration (Pro plan). Triggers/actions brokered by Zapier via a per-group API key; not a Skool-exposed endpoint surface.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere on Skool's own properties as of the review date.
+  officialCapabilities:
+    triggers:
+      - Send paid members' names and email addresses to another app (e.g. a CRM)
+      - Send membership questions and answers to another app
+    actions:
+      - Invite a member to a group
+      - Unlock a course for a member
+    access: Pro plan only; per-group API key from the group's Plugins settings.
+sources:
+  - url: https://help.skool.com/article/56-zapier-integration
+    type: Documentation
+    note: Official Zapier integration help article - Pro-plan-only, API key from Plugins, triggers/actions listed. No REST/WebSocket API mentioned.
+  - url: https://zapier.com/apps/skool/integrations
+    type: Integrations
+    note: Zapier's Skool app listing enumerating available triggers and actions.
+  - url: https://www.skool.com/pricing
+    type: Pricing
+    note: Skool pricing - Hobby $9/mo (10% transaction fee) and Pro $99/mo (2.9% fee); Zapier plugin is a Pro-tier feature.
+  - url: https://www.skool.com/community/skool-public-api
+    type: Community
+    note: Community thread requesting a public API - confirms one is not offered.
+  - url: https://www.skool.com/community/api-using-zapier-alternative
+    type: Community
+    note: Community thread on Zapier alternatives - confirms Zapier is the only official automation path.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and Skool publishes no documented
+    public REST API at all. No AsyncAPI or OpenAPI document was created because
+    there is no documented Skool-exposed endpoint surface to model. The apis.yml
+    entry is an honest gated stub that records the single official programmatic
+    capability (the Pro-plan Zapier integration) and explicitly marks that no
+    endpoints are modeled.
