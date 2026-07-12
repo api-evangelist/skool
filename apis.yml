@@ -53,6 +53,8 @@ apis:
     CRUD surface is published by Skool; there are no modeled endpoints because
     none are documented (endpointsModeled: false).
 common:
+- type: DomainSecurity
+  url: security/skool-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/skool
 - type: Website
