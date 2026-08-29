@@ -1,5 +1,8 @@
 aid: skool
 url: https://raw.githubusercontent.com/api-evangelist/skool/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "This catalog entry is an honest gated stub: no public API surface is modeled because none is documented."
 name: Skool
 kind: company
 description: >-
