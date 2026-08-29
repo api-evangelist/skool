@@ -15,6 +15,17 @@ description: >-
   unofficial third-party tools built on Skool's undocumented internal endpoints
   and are not endorsed or supported by Skool. This catalog entry is an honest
   gated stub: no public API surface is modeled because none is documented.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
