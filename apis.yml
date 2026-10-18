@@ -48,6 +48,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/skool.png
 tags:
 - Community
 - Courses
+- E-Learning
+- Membership
+- Creator Economy
+tags_raw:
+- Community
+- Courses
 - Online Learning
 - Membership
 - Creator Economy
