@@ -1,4 +1,4 @@
-# Skool (skool)
+# Skool
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,62 +64,90 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Skool is an all-in-one community platform that combines discussion communities, online courses, live calls, and gamification in a single product. It was founded by Sam Ovens and became widely known through its partnership with Alex Hormozi.
+Skool is an all-in-one community platform that combines discussion communities, online courses, live calls, and gamification in a single product, founded by Sam Ovens and popularized in partnership with Alex Hormozi. As of this review, Skool does NOT publish an official public or partner developer REST API. The only official programmatic surface is a Zapier integration, gated to the paid Pro plan, that exposes a small set of triggers and actions via a per-group API key used solely to link a Skool group to Zapier - it is not a general-purpose developer API. All broader "Skool API" offerings found in the wild (Apify actors, docs.skoolapi.com, reverse-engineered clients, Chrome extensions) are unofficial third-party tools built on Skool's undocumented internal endpoints and are not endorsed or supported by Skool. This catalog entry is an honest gated stub: no public API surface is modeled because none is documented.
 
-**Access model — important:** As of this review, Skool does **not** publish an official public or partner developer REST API. This is a deliberate, long-standing product decision favoring simplicity over an extensible integration surface. The only official programmatic capability is a **Zapier integration**, available on the paid **Pro plan only**, enabled with a per-group **API key** obtained from the group's Plugins settings. That key exists solely to link a Skool group to Zapier — it is not a general-purpose developer API, and Skool publishes no base URL, endpoint reference, OpenAPI description, or WebSocket endpoint.
+**Areas:** Community · Courses · E-Learning · Membership · Creator Economy
 
-This is an honest **gated stub**: no API surface is modeled (`endpointsModeled: false`) because Skool documents none.
+## Skool on APIs.io
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/skool/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/skool/refs/heads/main/apis.yml)
+Everything profiled for Skool is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/skool/](https://apis.io/providers/skool/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Community
-- Courses
-- Online Learning
-- Membership
-- Creator Economy
-- No Public API
+- [Skool Zapier Integration](https://apis.io/apis/skool/skool-zapier-integration/) — Skool's only official programmatic surface. This is a Zapier-mediated automation integration, not a public REST API. It is available on the paid Pro plan…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-05
-- **Modified:** 2026-07-05
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Official Programmatic Surface
+#### Security (1)
 
-### Skool Zapier Integration
+Authentication, trust centre, and vulnerability disclosure.
 
-Skool's only official programmatic surface — a Zapier-mediated automation integration, **not** a public REST API. Available on the **Pro plan only** (not Hobby), enabled via a per-group API key found under the group's Plugins settings. Refreshing that key breaks all existing Zaps.
+- [Skool Domain Security](https://apis.io/security/skool/skool-domain-security/)
 
-- **Human URL:** [https://help.skool.com/article/56-zapier-integration](https://help.skool.com/article/56-zapier-integration)
+#### Plans and pricing (1)
 
-Capabilities (fixed set):
+Published plans, tiers and prices.
 
-- **Triggers:** send paid members' names and email addresses to another app (e.g. a CRM); send membership questions and answers to another app.
-- **Actions:** invite a member to a group; unlock a course for a member.
+- [Skool Plans Pricing](https://apis.io/plans/skool/skool-plans-pricing/)
 
-## Unofficial Third-Party Tools (Not Endorsed by Skool)
+## Where to find this API
 
-Several unofficial "Skool API" products exist — Apify actors, `docs.skoolapi.com`, reverse-engineered clients, and Chrome extensions — that read and write Skool posts, comments, members, and courses by calling Skool's **undocumented internal endpoints**. None of these are provided, endorsed, or supported by Skool, and they can break without notice. They are noted here for accuracy only and are **not** represented as an official Skool API in this catalog.
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-## Pricing
-
-Skool uses flat monthly pricing with a 14-day free trial on each tier (about two months free when billed annually):
-
-- **Hobby — $9/month:** unlimited members, courses, videos, live calls; custom URL; 10% transaction fee. No Zapier integration.
-- **Pro — $99/month:** everything in Hobby plus a 2.9% transaction fee, multiple admins (up to 30), advanced plugins, detailed analytics, boosted network discovery, and the **Zapier integration** (the official programmatic surface).
-
-See [plans/skool-plans-pricing.yml](plans/skool-plans-pricing.yml).
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/skool)
 - [Website](https://www.skool.com)
 - [Documentation](https://help.skool.com)
-- [Plans](plans/skool-plans-pricing.yml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 7.3** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 5.3 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/skool/](https://apis.io/providers/skool/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Skool: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/skool/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
